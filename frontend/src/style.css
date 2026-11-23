@@ -1,0 +1,226 @@
+:root {
+  font-family: Inter, "PingFang SC", "Microsoft YaHei UI", sans-serif;
+  color: #18251f;
+  background: #f8f9f5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --green: #214637;
+  --muted: #596760;
+  --line: #dce3dc;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body { margin: 0; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+button:disabled { cursor: wait; }
+
+button:focus-visible {
+  outline: 2px solid #346f54;
+  outline-offset: 3px;
+}
+
+.page {
+  display: grid;
+  grid-template-columns: minmax(0, 47fr) minmax(0, 53fr);
+  min-height: 100svh;
+}
+
+.panel {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  padding: 42px clamp(32px, 4vw, 68px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.brand-mark {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 11px;
+  background: var(--green);
+}
+
+.brand-mark span {
+  position: relative;
+  width: 15px;
+  height: 17px;
+  border: 1.5px solid #e9f2e6;
+  border-bottom: 0;
+  border-radius: 7px 7px 1px 1px;
+}
+
+.brand-mark span::after {
+  position: absolute;
+  inset: 5px 3px 0;
+  border: 1.5px solid #e9f2e6;
+  border-bottom: 0;
+  border-radius: 5px 5px 1px 1px;
+  content: '';
+}
+
+.panel-content {
+  align-self: center;
+  width: min(100%, 390px);
+  margin-inline: auto;
+  padding: 56px 0 76px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(34px, 3.6vw, 50px);
+  font-weight: 750;
+  line-height: 1.18;
+  letter-spacing: -0.035em;
+}
+
+.intro {
+  margin: 14px 0 38px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.login-form, .field { display: grid; }
+.login-form { gap: 21px; }
+.field { gap: 9px; }
+
+.field label {
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.field input {
+  width: 100%;
+  min-height: 52px;
+  padding: 12px 15px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: inherit;
+  background: #fff;
+  font-size: 15px;
+}
+
+.field input::placeholder { color: #68756e; }
+.field input:disabled { background: #f2f4ef; }
+.field input:focus {
+  outline: 2px solid #4b7b63;
+  outline-offset: 1px;
+}
+
+.password-field { position: relative; }
+.password-field input { padding-inline-end: 70px; }
+
+.visibility-button, .demo button {
+  border: 0;
+  border-radius: 5px;
+  color: var(--green);
+  background: transparent;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.visibility-button {
+  position: absolute;
+  inset: 6px 7px 6px auto;
+  padding: 0 12px;
+}
+
+.visibility-button:not(:disabled):hover, .demo button:not(:disabled):hover {
+  background: #e5eee5;
+}
+
+.primary-button {
+  position: relative;
+  display: grid;
+  width: 100%;
+  min-height: 52px;
+  place-items: center;
+  padding: 12px 46px;
+  border: 0;
+  border-radius: 9px;
+  color: #fff;
+  background: var(--green);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.primary-button:not(:disabled):hover { background: #17362a; }
+.primary-button:disabled { opacity: 0.7; }
+
+.button-arrow {
+  position: absolute;
+  inset-inline-end: 17px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.error {
+  margin: -5px 0 0;
+  color: #a2222d;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.demo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 12px;
+  margin-top: 27px;
+  padding: 8px 11px 8px 13px;
+  border: 1px solid #e2e8e0;
+  border-radius: 9px;
+  color: var(--muted);
+  background: #eef2eb;
+  font-size: 12px;
+}
+
+.demo p { margin: 0; }
+.demo code { color: var(--green); }
+.demo button { min-height: 34px; padding: 0 9px; }
+
+.account-details {
+  margin: 0 0 24px;
+  padding: 5px 16px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #fff;
+}
+
+.account-details div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 13px 0;
+}
+
+.account-details div + div { border-top: 1px solid var(--line); }
+.account-details dt { color: var(--muted); }
+.account-details dd { margin: 0; overflow-wrap: anywhere; }
+
+.photo {
+  margin: 20px 20px 20px 0;
+  border-radius: 24px;
+  background: #274e3b url('./assets/forest.webp') center / cover no-repeat;
+}
+
+@media (max-width: 760px) {
+  .page { display: block; }
+  .panel { min-height: 100svh; padding: 26px 24px; }
+  .panel-content { padding: 44px 0 52px; }
+  .photo { display: none; }
+}

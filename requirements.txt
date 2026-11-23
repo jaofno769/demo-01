@@ -1,0 +1,6 @@
+aiomysql
+cryptography
+fastapi[standard]
+pwdlib[argon2]
+PyJWT
+SQLAlchemy[asyncio]

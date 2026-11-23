@@ -1,0 +1,23 @@
+services:
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: "1"
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-fastapi_demo}
+      MYSQL_USER: ${MYSQL_USER:-signin}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-signin-local-db}
+    ports:
+      - "127.0.0.1:${MYSQL_PORT:-3307}:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - mysql --protocol=TCP -h 127.0.0.1 -u "$$MYSQL_USER" --password="$$MYSQL_PASSWORD" "$$MYSQL_DATABASE" -e 'SELECT 1'
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 15s
+
+volumes:
+  mysql-data:

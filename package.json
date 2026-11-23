@@ -1,0 +1,22 @@
+{
+  "name": "sign-in-dev",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node dev.cjs",
+    "build": "vite build frontend",
+    "preview": "vite preview frontend"
+  },
+  "dependencies": {
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.3",
+    "concurrently": "^9.2.1",
+    "nodemon": "3.1.11",
+    "vite": "^6.3.5"
+  },
+  "allowScripts": {
+    "esbuild@0.25.12": true
+  }
+}
