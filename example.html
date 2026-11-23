@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            gap: 50px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        table {
+            margin: 200px auto 0;
+        }
+        .actions {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="container navigation" aria-label="主导航" align-items="center">
+        <div >
+            <ul>
+                <li>HTML</li>
+                <li>Python</li>
+                <li>C++</li>
+                <li>Java</li>
+            </ul>
+        </div>
+    </nav>
+    <table>
+  <caption>学生成绩表</caption>
+
+  <thead>
+    <tr>
+      <th>姓名</th>
+      <th>语文</th>
+      <th>数学</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>张三</td>
+      <td>90</td>
+      <td>85</td>
+    </tr>
+    <tr>
+      <td>李四</td>
+      <td>78</td>
+      <td>92</td>
+    </tr>
+  </tbody>
+
+  <tfoot>
+    <tr>
+      <td>平均</td>
+      <td>84</td>
+      <td>88.5</td>
+    </tr>
+  </tfoot>
+</table>
+<div class="actions">
+    <button id="btn-plus" type="button">+10</button>
+    <button id="btn-minus" type="button">-10</button>
+</div>
+<div class="color"> 
+    <button id="btn-red" type="button">红色</button>
+    <button id="btn-yellow" type="button">黄色</button>
+    <button id="btn-blue" type="button">蓝色</button>
+</div>
+<script src="example.js"></script>
+</body>
+</html>
